@@ -1,0 +1,20 @@
+.cases {
+    background-color: #FFEEAA !important;
+}
+.deaths {
+    background-color: rgba(255, 0, 0, 0.747) !important;
+    color: white;
+}
+.recovered {
+    background-color: #c8e6c9 !important;
+}
+td,tr {
+    font-weight: 700;
+    text-align: center;
+}
+thead {
+    background-color: gray;
+}
+table {
+    border: 2px solid;
+}
