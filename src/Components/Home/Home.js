@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Card from '../Card/Card';
 import CountryData from '../CountryData/CountryData';
 import GlobalData from '../GlobalData/GlobalData';
 
@@ -11,6 +12,7 @@ const Home = () => {
     },[])
     return (
         <>
+            <Card key="card" global={data.Global}></Card>
             <GlobalData key='global' global={data.Global}></GlobalData>
             <CountryData key='country' countries={data.Countries}></CountryData>
         </>
