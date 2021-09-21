@@ -25,11 +25,11 @@ const CountryData = (props) => {
                             <tr>
                             <td>{country.Country}</td>
                             <td>{(country.Date.split('T'))[0]}</td>
-                            <td className="cases">{country.NewConfirmed}</td>
+                            <td className={country.NewConfirmed>0 && "cases"}>{country.NewConfirmed}</td>
                             <td>{country.TotalConfirmed}</td>
-                            <td className="deaths">{country.NewDeaths}</td>
+                            <td className={country.NewDeaths>0 && "deaths"}>{country.NewDeaths}</td>
                             <td>{country.TotalDeaths}</td>
-                            <td className="recovered">{country.NewRecovered}</td>
+                            <td className={country.NewRecovered>0 && "recovered"}>{country.NewRecovered}</td>
                             <td>{country.TotalRecovered}</td>
                             </tr>
                         </tbody>

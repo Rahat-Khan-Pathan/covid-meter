@@ -20,14 +20,11 @@ const Search = () => {
     },[url]);
     const reverse = myData=> {
         myData?.map(dt => {
-            if(dt.Confirmed===0) dt.Confirmed=prevCases;
-            if(dt.Deaths===0) dt.Deaths=prevDeaths;
-            if(dt.Recovered===0) dt.Recovered=prevRecovered;
-            dt.NewCases = dt.Confirmed - prevCases;
+            (dt.Confirmed)? dt.NewCases = dt.Confirmed - prevCases : dt.NewCases=0;
             prevCases=dt.Confirmed;
-            dt.NewDeaths = dt.Deaths - prevDeaths;
+            (dt.Deaths)? dt.NewDeaths = dt.Deaths - prevDeaths : dt.NewDeaths=0;
             prevDeaths = dt.Deaths;
-            dt.NewRecovered = dt.Recovered - prevRecovered;
+            (dt.Recovered)? dt.NewRecovered = dt.Recovered - prevRecovered : dt.NewRecovered=0;
             prevRecovered = dt.Recovered;
         })
         myData.reverse();
@@ -54,11 +51,11 @@ const Search = () => {
                         data.map(dt=> 
                             <tr>
                             <td>{(dt.Date.split('T'))[0]}</td>
-                            <td className="cases">{dt.NewCases}</td>
+                            <td className={dt.NewCases>0 && "cases"}>{dt.NewCases}</td>
                             <td>{dt.Confirmed}</td>
-                            <td className="deaths">{dt.NewDeaths}</td>
+                            <td className={dt.NewDeaths>0 && "deaths"}>{dt.NewDeaths}</td>
                             <td>{dt.Deaths}</td>
-                            <td className="recovered">{dt.NewRecovered}</td>
+                            <td className={dt.NewRecovered>0 && "recovered"}>{dt.NewRecovered}</td>
                             <td>{dt.Recovered}</td>
                             </tr>
                         )

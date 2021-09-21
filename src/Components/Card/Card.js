@@ -14,7 +14,7 @@ const Card = (props) => {
             const inc = Math.round(target/speed);
             if(count <= target) {
                 counter.innerText = count + inc;
-                setTimeout(updateCount,100);
+                setTimeout(updateCount,90);
             }
             else {
                 counter.innerText = target;

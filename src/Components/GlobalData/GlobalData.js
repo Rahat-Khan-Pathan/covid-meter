@@ -21,11 +21,11 @@ const GlobalData = (props) => {
                 <tbody>
                     <tr>
                     <td>{newDate[0]}</td>
-                    <td className="cases">{NewConfirmed}</td>
+                    <td className={NewConfirmed>0 && "cases"}>{NewConfirmed}</td>
                     <td>{TotalConfirmed}</td>
-                    <td className="deaths">{NewDeaths}</td>
+                    <td className={NewDeaths>0 && "deaths"}>{NewDeaths}</td>
                     <td>{TotalDeaths}</td>
-                    <td className="recovered">{NewRecovered}</td>
+                    <td className={NewRecovered>0 && "recovered"}>{NewRecovered}</td>
                     <td>{TotalRecovered}</td>
                     </tr>
                 </tbody>

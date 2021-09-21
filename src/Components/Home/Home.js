@@ -9,6 +9,9 @@ const Home = () => {
         fetch('https://api.covid19api.com/summary')
             .then(res=>res.json())
             .then(data=>setData(data))
+            .catch(er=> {
+                console.log(er);
+            })
     },[])
     return (
         <>
