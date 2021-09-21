@@ -3,8 +3,7 @@ import { useState } from 'react/cjs/react.development';
 import './Card.css';
 
 const Card = (props) => {
-    const {TotalConfirmed,TotalDeaths} = props.global;
-    const TotalRecovered = 155465512;
+    const {TotalConfirmed,TotalDeaths,TotalRecovered} = props.global;
     const counters = document.querySelectorAll('.counter');
     const speed = 20;
     counters.forEach(counter => {

@@ -1,9 +1,8 @@
 import './GlobalData.css';
 
 const GlobalData = (props) => {
-    const {NewConfirmed,TotalConfirmed,NewDeaths,TotalDeaths,NewRecovered,Date} = props.global;
+    const {NewConfirmed,TotalConfirmed,NewDeaths,TotalDeaths,NewRecovered,TotalRecovered,Date} = props.global;
     const newDate = (Date.split('T'));
-    const TotalRecovered = 155465512;
     return (
         <div className="container search-div">
             <h2 className="text-center mt-4 mb-3 heading">GLOBAL</h2>
