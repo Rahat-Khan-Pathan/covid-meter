@@ -8,3 +8,9 @@ td,tr {
 tbody {
     overflow: hidden;
 }
+.table-rs, .table-responsive {
+    border-bottom: 2px solid gray !important;
+}
+.table {
+    margin-bottom: 0;
+}

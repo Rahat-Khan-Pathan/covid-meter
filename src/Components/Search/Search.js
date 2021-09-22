@@ -5,6 +5,7 @@ import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
 import Chart from "../Chart/Chart";
 import "./Search.css";
+import Footer from "../Footer/Footer";
 
 const Search = () => {
   let { query, search } = useParams();
@@ -130,6 +131,7 @@ const Search = () => {
           </table>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };
