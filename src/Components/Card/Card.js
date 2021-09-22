@@ -6,8 +6,8 @@ const Card = (props) => {
   const { cases, deaths, recovered, population, affectedCountries, critical } =
     props.data;
   return (
-    <div className="container">
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mx-4 g-4 card-div">
+    <div className={"container " + "container-"+props.pd}>
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mx-4 g-4 mt-4 ">
         <Col name={"Total Affected Countries"} data={affectedCountries}></Col>
         <Col name={"Total Cases"} data={cases}></Col>
         <Col name={"Total Deaths"} className={"death"} data={deaths}></Col>

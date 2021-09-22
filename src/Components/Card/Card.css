@@ -1,6 +1,3 @@
-.card-div {
-    margin-top: 100px;
-}
 .cnt {
     font-size: 25px;
     font-weight: 600;
@@ -29,4 +26,8 @@
 }
 .recover {
     color: green;
+}
+
+.container-true {
+    padding-top: 100px;
 }

@@ -10,10 +10,3 @@
 .search-div {
     margin-top: 100px;
 }
-.sticky {
-    position: sticky;
-    top: 50px;
-}
-tbody {
-    overflow: hidden;
-}

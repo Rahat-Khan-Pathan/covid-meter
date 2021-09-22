@@ -1,3 +1,10 @@
 .display-false {
     display: none;
 }
+td,tr {
+    font-weight: 700;
+    text-align: center;
+}
+tbody {
+    overflow: hidden;
+}

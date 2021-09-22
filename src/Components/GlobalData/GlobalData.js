@@ -74,27 +74,34 @@ const GlobalData = (props) => {
     <div>
       <div className="container search-div">
         <h2 className="text-center mt-4 mb-3 heading">GLOBAL</h2>
-        <table className="table table-bordered">
-          <thead>
-            <TableHeader tests={" "} testsPerOneMillion={" "}></TableHeader>
-          </thead>
-          <tbody>
-            <TableBody
-              key={"global"}
-              updated={updated}
-              todayCases={todayCases}
-              cases={cases}
-              todayDeaths={todayDeaths}
-              deaths={deaths}
-              todayRecovered={todayRecovered}
-              recovered={recovered}
-              tests={tests || 0}
-              testsPerOneMillion={testsPerOneMillion || 0}
-            ></TableBody>
-          </tbody>
-        </table>
+        <div className="table-responsive">
+          <table className="table table-bordered">
+            <thead>
+              <TableHeader tests={" "} testsPerOneMillion={" "}></TableHeader>
+            </thead>
+            <tbody>
+              <TableBody
+                key={"global"}
+                updated={updated}
+                todayCases={todayCases}
+                cases={cases}
+                todayDeaths={todayDeaths}
+                deaths={deaths}
+                todayRecovered={todayRecovered}
+                recovered={recovered}
+                tests={tests || 0}
+                testsPerOneMillion={testsPerOneMillion || 0}
+              ></TableBody>
+            </tbody>
+          </table>
+        </div>
       </div>
-      <Chart key="chart" name={'GLOBAL'} data={chartData} vacData={chartVacData}></Chart>
+      <Chart
+        key="chart"
+        name={"GLOBAL"}
+        data={chartData}
+        vacData={chartVacData}
+      ></Chart>
     </div>
   );
 };

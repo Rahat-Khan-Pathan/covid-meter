@@ -1,4 +1,5 @@
 import React from "react";
+import './TableHeader.css';
 
 const TableHeader = (props) => {
   return (

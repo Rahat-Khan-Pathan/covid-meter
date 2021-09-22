@@ -17,7 +17,7 @@ const Home = () => {
   
   return (
     <>
-      <Card key="card" data={data}></Card>
+      <Card key="card" pd={true} data={data}></Card>
       <GlobalData key="global" data={data}></GlobalData>
       <CountryData key="country"></CountryData>
       <Footer></Footer>

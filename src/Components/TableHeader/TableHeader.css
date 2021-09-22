@@ -1,0 +1,11 @@
+.sticky {
+    position: sticky;
+    top: 0px;
+}
+.table-rs {
+    overflow-y: auto;
+    height: 500px;
+}
+thead {
+    background-color: gray;
+}
