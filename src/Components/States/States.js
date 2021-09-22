@@ -3,7 +3,7 @@ import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
 
 const States = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   useEffect(() => {
     fetch("https://corona.lmao.ninja/v3/covid-19/states")
       .then((res) => res.json())
@@ -25,8 +25,8 @@ const States = () => {
           ></TableHeader>
         </thead>
         <tbody>
-          {data.length > 0 &&
-            data.map((dt) => (
+          {data?.length > 0 &&
+            data?.map((dt) => (
               <TableBody
                 key={dt.state}
                 name={dt.state}

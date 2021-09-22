@@ -29,7 +29,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" aria-current="page" href="/states">
-                States
+                USA States
               </a>
             </li>
             <li className="nav-item">

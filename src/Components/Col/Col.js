@@ -6,7 +6,7 @@ const Col = (props) => {
     <>
       {props.data > 0 && (
         <div className="col">
-          <div className="card">
+          <div className="card black-card h-100">
             <div className="card-body">
               <h5 className="card-title">{props.name}</h5>
               <p className={"card-text cnt " + props.className}>

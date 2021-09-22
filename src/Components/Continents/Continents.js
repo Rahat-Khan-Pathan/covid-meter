@@ -3,7 +3,7 @@ import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
 
 const Continents = () => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   useEffect(() => {
     fetch("https://corona.lmao.ninja/v3/covid-19/continents")
       .then((res) => res.json())
@@ -24,8 +24,8 @@ const Continents = () => {
           ></TableHeader>
         </thead>
         <tbody>
-          {data.length > 0 &&
-            data.map((dt) => (
+          {data?.length > 0 &&
+            data?.map((dt) => (
               <TableBody
                 key={dt.continent}
                 name={dt.continent}

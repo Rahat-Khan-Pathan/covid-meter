@@ -6,7 +6,7 @@ const TableBody = (props) => {
   return (
     <tr>
       <td className={"flag-container display-" + Boolean(props.name)}> <img src={props.flag} className={"flag display-"+Boolean(props.flag)} alt="" /> {props.name}</td>
-      <td>{new Date(props.updated).toLocaleDateString()}</td>
+      <td>{(props.updated===undefined)?'Dinosaur':new Date(props.updated).toLocaleDateString()}</td>
       <td className={"cases-" + Boolean(props.todayCases > 0)}>
         {props.todayCases || 0}
       </td>

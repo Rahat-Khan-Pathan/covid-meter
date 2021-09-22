@@ -33,7 +33,7 @@ const Search = () => {
       .catch((er) => console.log(er));
 
       window.scrollTo(0, 0);
-  }, [url, myUrl,vacUrl]);
+  }, []);
   const checkData = (data) => {
     if (data.message === undefined) {
       setAllData(data);
@@ -81,7 +81,7 @@ const Search = () => {
   return (
     <>
       <Card key="card" data={data}></Card>
-      <Chart key="chart" data={chartData} vacData={chartDataVac}></Chart>
+      <Chart key="chart" name={search.toUpperCase()} data={chartData} vacData={chartDataVac}></Chart>
       <div className="container search-div">
         <h2 className="text-center mt-4 mb-4 heading">
           {query.toUpperCase()}: {search.toUpperCase()}
