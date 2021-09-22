@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../Footer/Footer";
 import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
 
@@ -48,7 +47,6 @@ const States = () => {
           </table>
         </div>
       </div>
-      <Footer></Footer>
     </>
   );
 };
