@@ -17,23 +17,23 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <div className="collapse navbar-collapse text-center" id="navbarTogglerDemo01">
           <a className="navbar-brand" href="/home">
             COVID METER
           </a>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="/home">
+              <a className="nav-link text-center" aria-current="page" href="/home">
                 Home
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="/states">
+              <a className="nav-link text-center" aria-current="page" href="/states">
                 USA States
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="/continents">
+              <a className="nav-link text-center" aria-current="page" href="/continents">
                 Continents
               </a>
             </li>
