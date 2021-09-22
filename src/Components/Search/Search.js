@@ -97,7 +97,7 @@ const Search = () => {
         data={chartData}
         vacData={chartDataVac}
       ></Chart>
-      <div className="container search-div">
+      <div className="container countries-div">
         <div className="table-rs">
           <table className="table table-bordered">
             <thead className="sticky">

@@ -1,10 +1,10 @@
 .sticky {
     position: sticky;
-    top: -5px;
+    top: -1px;
 }
 .table-rs {
     overflow-y: auto;
-    height: 700px;
+    height: 80vh;
 }
 thead {
     background-color: gray;
