@@ -1,56 +1,30 @@
-import React from 'react';
-import { useState } from 'react/cjs/react.development';
-import './Card.css';
+import React from "react";
+import Col from "../Col/Col";
+import "./Card.css";
 
 const Card = (props) => {
-    const {TotalConfirmed,TotalDeaths,TotalRecovered} = props.global;
-    const counters = document.querySelectorAll('.counter');
-    const speed = 20;
-    counters.forEach(counter => {
-        const updateCount = ()=> {
-            console.log(counter);
-            const target = +(counter.getAttribute('data-target'));
-            const count = +(counter.innerText);
-            const inc = Math.round(target/speed);
-            if(count <= target) {
-                counter.innerText = count + inc;
-                setTimeout(updateCount,90);
-            }
-            else {
-                counter.innerText = target;
-            }
-        }
-        updateCount();
-    })
-
-    return (
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 mx-4 g-4 card-div">
-            <div class="col">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Cases</h5>
-                        <p class="card-text cnt counter" data-target={TotalConfirmed}>0</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Deaths</h5>
-                        <p class="card-text cnt death counter" data-target={TotalDeaths}>0</p>
-                    </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Total Recovered</h5>
-                        <p class="card-text cnt recover counter" data-target={TotalRecovered}>0</p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-    );
+  const { cases, deaths, recovered, population, affectedCountries, critical } =
+    props.data;
+  return (
+    <div className="container">
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 mx-4 g-4 card-div">
+        <Col name={"Total Affected Countries"} data={affectedCountries}></Col>
+        <Col name={"Total Cases"} data={cases}></Col>
+        <Col name={"Total Deaths"} className={"death"} data={deaths}></Col>
+        <Col
+          name={"Critical Cases"}
+          className={"text-warning"}
+          data={critical}
+        ></Col>
+        <Col
+          name={"Total Recovered"}
+          className={"recover"}
+          data={recovered}
+        ></Col>
+        <Col name={"Population"} data={population}></Col>
+      </div>
+    </div>
+  );
 };
 
 export default Card;

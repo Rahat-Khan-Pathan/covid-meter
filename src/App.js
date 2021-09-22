@@ -8,6 +8,8 @@ import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import Search from './Components/Search/Search';
 import NotFound from './Components/NotFound/NotFound';
+import States from './Components/States/States';
+import Continents from './Components/Continents/Continents';
 
 function App() {
   return (
@@ -16,19 +18,25 @@ function App() {
       <Navbar></Navbar>
         <Switch>
           <Route exact path="/">
-            <Home></Home>
+            <Home key="1"></Home>
           </Route>
-          <Route path="/home">
-            <Home></Home>
+          <Route exact path="/home">
+            <Home key="1"></Home>
           </Route>
-          <Route path="/country/:countryName">
-            <Search></Search>
+          <Route exact path="/countries/">
+            <Home key="1"></Home>
           </Route>
-          <Route exact path="/country/">
-            <Home></Home>
+          <Route exact path="/states">
+            <States key="2"></States>
+          </Route>
+          <Route exact path="/continents">
+            <Continents key="3"></Continents>
+          </Route>
+          <Route exact path="/search/:query/:search">
+            <Search key="4"></Search>
           </Route>
           <Route path="*">
-            <NotFound></NotFound>
+            <NotFound key="5"></NotFound>
           </Route>
         </Switch>
       </Router>

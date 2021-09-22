@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    const [input,setInput] = useState('');
+  const [input, setInput] = useState("");
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container nav-container">
@@ -23,8 +23,18 @@ const Navbar = () => {
           </a>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/home">
+              <a className="nav-link" aria-current="page" href="/home">
                 Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" aria-current="page" href="/states">
+                States
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" aria-current="page" href="/continents">
+                Continents
               </a>
             </li>
           </ul>
@@ -32,17 +42,21 @@ const Navbar = () => {
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Enter country name"
+              placeholder="Enter Country Name"
               aria-label="Search"
               value={input}
-              onInput={e => setInput(e.target.value)}
+              onInput={(e) => setInput(e.target.value)}
               id="input"
             />
-           <Link to={"/country/" + input}>
-           <button onClick={()=> document.getElementById('input').value=''} className="btn btn-outline-light" type="submit">
-              Search
-            </button>
-           </Link>
+            <Link to={"/search/countries/" + input}>
+              <button
+                onClick={() => (document.getElementById("input").value = "")}
+                className="btn btn-outline-light"
+                type="submit"
+              >
+                Search
+              </button>
+            </Link>
           </form>
         </div>
       </div>

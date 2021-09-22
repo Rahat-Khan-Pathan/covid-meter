@@ -2,8 +2,8 @@ import React from 'react';
 
 const NotFound = (props) => {
     return (
-        <div>
-            <h3>{props.country} Not found</h3>
+        <div className="text-center countries-div">
+            <h3 className="fw-bold">404! Not Found..</h3>
         </div>
     );
 };

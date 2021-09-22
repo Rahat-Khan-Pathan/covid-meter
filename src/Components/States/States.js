@@ -1,13 +1,12 @@
-import React from "react";
-import { useEffect, useState } from "react/cjs/react.development";
+import React, { useEffect } from "react";
+import { useState } from "react/cjs/react.development";
 import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
-import "./CountryData.css";
 
-const CountryData = (props) => {
-  const [data,setData] = useState({});
+const States = () => {
+  const [data, setData] = useState({});
   useEffect(() => {
-    fetch("https://corona.lmao.ninja/v3/covid-19/countries")
+    fetch("https://corona.lmao.ninja/v3/covid-19/states")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((er) => {
@@ -15,27 +14,23 @@ const CountryData = (props) => {
       });
       window.scrollTo(0, 0);
   }, []);
-  
   return (
     <div className="container pb-5 countries-div">
-      <h2 className="text-center mt-4 mb-3 heading">COUNTRIES</h2>
+      <h2 className="text-center mt-4 mb-3 heading">STATES</h2>
       <table className="table table-bordered">
         <thead className="sticky">
           <TableHeader
-            name={"Country"}
+            name={"State"}
             tests={" "}
             testsPerOneMillion={" "}
-            details={" "}
           ></TableHeader>
         </thead>
         <tbody>
           {data.length > 0 &&
             data.map((dt) => (
               <TableBody
-                key={dt.country}
-                name={dt.country}
-                query={"/search/countries/"}
-                flag={dt.countryInfo.flag}
+                key={dt.state}
+                name={dt.state}
                 updated={dt.updated}
                 todayCases={dt.todayCases}
                 cases={dt.cases}
@@ -53,4 +48,4 @@ const CountryData = (props) => {
   );
 };
 
-export default CountryData;
+export default States;

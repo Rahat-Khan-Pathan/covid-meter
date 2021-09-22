@@ -1,3 +1,9 @@
 .countries-div {
     margin-top: 100px;
 }
+.flag {
+    width: 50px;
+}
+.flag-container {
+    text-align: left;
+}
