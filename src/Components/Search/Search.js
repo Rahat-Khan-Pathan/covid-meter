@@ -33,7 +33,7 @@ const Search = () => {
       .catch((er) => console.log(er));
 
       window.scrollTo(0, 0);
-  }, []);
+  }, [url,myUrl,vacUrl]);
   const checkData = (data) => {
     if (data.message === undefined) {
       setAllData(data);
