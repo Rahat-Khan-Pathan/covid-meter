@@ -84,7 +84,7 @@ const Search = () => {
       <Chart key="chart" name={search.toUpperCase()} data={chartData} vacData={chartDataVac}></Chart>
       <div className="container search-div">
         <h2 className="text-center mt-4 mb-4 heading">
-          {query.toUpperCase()}: {search.toUpperCase()}
+          {query.toUpperCase()}: {search.toUpperCase()} {(data.recovered===undefined)? ' Not Found!' : ''}
         </h2>
         <table className="table table-bordered">
           <thead className="sticky">

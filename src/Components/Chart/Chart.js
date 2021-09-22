@@ -32,19 +32,18 @@ export default function App(props) {
                       bottom: 0,
                     }}
                   >
-                    <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
                     <Area
                       type="monotone"
                       dataKey="uv"
-                      stroke="blue"
+                      stroke="steelblue"
                       fill="steelblue"
                     />
                   </AreaChart>
                 </ResponsiveContainer>
-                <h5 className="text-center mt-2">Affected Cases Growth Chart ({props.name})
+                <h5 className="text-center mt-2">Daily Affected Cases ({props.name})
                 </h5>
               </div>
             </div>
@@ -60,19 +59,18 @@ export default function App(props) {
                       bottom: 0,
                     }}
                   >
-                    <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
                     <Area
                       type="monotone"
                       dataKey="pv"
-                      stroke="red"
+                      stroke="orangered"
                       fill="orangered"
                     />
                   </AreaChart>
                 </ResponsiveContainer>
-                <h5 className="text-center mt-2">Deaths Growth Chart  ({props.name})</h5>
+                <h5 className="text-center mt-2">Daily Deaths ({props.name})</h5>
               </div>
             </div>
             <div className="col">
@@ -87,19 +85,18 @@ export default function App(props) {
                       bottom: 0,
                     }}
                   >
-                    <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="name" />
                     <YAxis />
                     <Tooltip />
                     <Area
                       type="monotone"
                       dataKey="cv"
-                      stroke="green"
+                      stroke="seagreen"
                       fill="lightgreen"
                     />
                   </AreaChart>
                 </ResponsiveContainer>
-                <h5 className="text-center mt2">Vaccination Growth Chart  ({props.name})</h5>
+                <h5 className="text-center mt2">Daily Vaccinations ({props.name})</h5>
               </div>
             </div>
           </div>
