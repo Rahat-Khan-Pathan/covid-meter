@@ -1,5 +1,5 @@
 import "./Chart.css";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   AreaChart,
   Area,
@@ -8,7 +8,6 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-import { useEffect } from "react/cjs/react.development";
 
 export default function App(props) {
     useEffect(()=> {

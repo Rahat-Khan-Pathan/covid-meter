@@ -1,10 +1,9 @@
-import React from "react";
-import { useEffect, useState } from "react/cjs/react.development";
+import React, { useEffect, useState } from "react";
 import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
 import "./CountryData.css";
 
-const CountryData = (props) => {
+const CountryData = () => {
   const [data,setData] = useState({});
   useEffect(() => {
     fetch("https://corona.lmao.ninja/v3/covid-19/countries")
@@ -13,7 +12,6 @@ const CountryData = (props) => {
       .catch((er) => {
         console.log(er);
       });
-      window.scrollTo(0, 0);
   }, []);
   
   return (

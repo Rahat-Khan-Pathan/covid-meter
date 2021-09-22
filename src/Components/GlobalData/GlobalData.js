@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react/cjs/react.development";
+
 import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
 import Chart from '../Chart/Chart';
 import "./GlobalData.css";
+import { useEffect, useState } from "react";
 
 const GlobalData = (props) => {
   const [data,setData] = useState({cases:{},deaths:{},recovered:{}});
@@ -19,8 +20,6 @@ const GlobalData = (props) => {
       .then((res) => res.json())
       .then((data) => checkVacData(data))
       .catch((er) => console.log(er));
-
-      window.scrollTo(0, 0);
   },[url,vacUrl])
   const checkData = (data) => {
     if (data.message === undefined) {

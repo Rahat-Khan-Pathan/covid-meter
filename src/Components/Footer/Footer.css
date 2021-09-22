@@ -1,0 +1,12 @@
+.footer-container {
+    background-color: #212529;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.credit {
+    margin: 0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

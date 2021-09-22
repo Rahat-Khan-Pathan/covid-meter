@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import CountryData from "../CountryData/CountryData";
+import Footer from "../Footer/Footer";
 import GlobalData from "../GlobalData/GlobalData";
 
 const Home = () => {
@@ -12,7 +13,6 @@ const Home = () => {
       .catch((er) => {
         console.log(er);
       });
-      window.scrollTo(0, 0);
   }, []);
   
   return (
@@ -20,6 +20,7 @@ const Home = () => {
       <Card key="card" data={data}></Card>
       <GlobalData key="global" data={data}></GlobalData>
       <CountryData key="country"></CountryData>
+      <Footer></Footer>
     </>
   );
 };
