@@ -37,6 +37,11 @@ const Navbar = () => {
                 Continents
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link text-center" aria-current="page" href="/zones">
+                Zones
+              </a>
+            </li>
           </ul>
           <form className="d-flex">
             <input

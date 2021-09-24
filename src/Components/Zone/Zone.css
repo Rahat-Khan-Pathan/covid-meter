@@ -1,0 +1,16 @@
+.flag-img {
+    width: 80%;
+}
+.col-1 {
+    padding: 0;
+    margin: 0;
+    margin-left: 15px;
+}
+.overflow {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 500px;
+    width: 100%;
+    border: 1px solid gray;
+    padding: 5px;
+}

@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
 
-const States = () => {
-  const [data, setData] = useState([]);
+const States = (props) => {
+  const {data} = props;
   useEffect(() => {
-    fetch("https://corona.lmao.ninja/v3/covid-19/states")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((er) => {
-        console.log(er);
-      });
     window.scrollTo(0, 0);
   }, []);
   return (

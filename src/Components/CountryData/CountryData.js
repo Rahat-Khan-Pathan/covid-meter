@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
 import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
 import "./CountryData.css";
 
-const CountryData = () => {
-  const [data, setData] = useState({});
-  useEffect(() => {
-    fetch("https://corona.lmao.ninja/v3/covid-19/countries")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((er) => {
-        console.log(er);
-      });
-  }, []);
-
+const CountryData = (props) => {
+  const {data} = props;
   return (
     <>
       <div className="container pb-5 countries-div">
@@ -30,7 +20,7 @@ const CountryData = () => {
               ></TableHeader>
             </thead>
             <tbody>
-              {data.length > 0 &&
+              {data.length &&
                 data.map((dt) => (
                   <TableBody
                     key={dt.country}

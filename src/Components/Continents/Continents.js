@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
 
-const Continents = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch("https://corona.lmao.ninja/v3/covid-19/continents")
-      .then((res) => res.json())
-      .then((data) => setData(data))
-      .catch((er) => {
-        console.log(er);
-      });
-  }, []);
+const Continents = (props) => {
+  const {data} = props;
+  useEffect(()=> {
+    window.scrollTo(0,0);
+  },[])
   return (
     <>
       <div className="container pb-5 countries-div">
