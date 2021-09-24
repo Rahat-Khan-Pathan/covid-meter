@@ -86,7 +86,7 @@ const Search = () => {
     <>
       <div className="container search-div">
         <h2 className="text-center heading">
-          {query.toUpperCase()}: {search.toUpperCase()}{" "}
+          {'COUNTRY'}: {search.toUpperCase()}{" "}
           {data.recovered === undefined ? " Not Found!" : ""}
         </h2>
       </div>
