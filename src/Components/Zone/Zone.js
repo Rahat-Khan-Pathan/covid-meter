@@ -16,15 +16,15 @@ const Zone = (props) => {
     <div className="overflow">
       {data &&
         data?.map((dt) => (
-          <div>
-            <div className="row mb-4 pe-4">
+          <div className="pe-4">
+            <div className="row mb-4">
               <div className="col-2 d-flex align-items-center justify-content-center">
                 <img className="flag-img" src={dt.countryInfo.flag} alt="" />
               </div>
               <div className="col-10">
                 <div className="d-flex justify-content-between">
                   <span>{dt.country}</span>
-                  <span>{check(dt.todayCases, dt.population)} / 100,000</span>
+                  <span>{check(dt.todayCases, dt.population)} / 100,000 Cases</span>
                 </div>
                 <style type="text/css">
                   {`

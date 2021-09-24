@@ -6,7 +6,7 @@ td,tr {
     text-align: center;
 }
 tbody {
-    overflow: hidden;
+    overflow: scroll;
 }
 .table-rs, .table-responsive {
     border: 1px solid gray !important;
