@@ -46,7 +46,7 @@ const Zones = (props) => {
   );
   return (
         <div className="container zones-container">
-        <div className="row row-cols-1 row-cols-lg-2 g-5">
+        <div className="row row-cols-1 row-cols-lg-2 gy-5">
             <div className="col mb-5">
             <h2 className="text-center mb-3 heading">Red Zone Countries</h2>
             <Zone
