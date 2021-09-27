@@ -6,10 +6,11 @@ import TableHeader from "../TableHeader/TableHeader";
 import Chart from "../Chart/Chart";
 import "./Search.css";
 import Footer from "../Footer/Footer";
+import Spinner from "../Spinner/Spinner";
 
 const Search = () => {
   let { query, search } = useParams();
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
   const [allData, setAllData] = useState({
     timeline: { cases: [0], deaths: [0], recovered: [0] },
   });
@@ -18,6 +19,7 @@ const Search = () => {
   const myUrl = `https://corona.lmao.ninja/v3/covid-19/historical/${search}?lastdays=all`;
   const vacUrl = `https://corona.lmao.ninja/v3/covid-19/vaccine/coverage/countries/${search}?lastdays=all&fullData=true`;
   useEffect(() => {
+    setData([]);
     fetch(url)
       .then((res) => res.json())
       .then((data) => setData(data))
@@ -84,54 +86,60 @@ const Search = () => {
   dates.pop();
   return (
     <>
-      <div className="container search-div">
-        <h2 className="text-center heading">
-          {'COUNTRY'}: {search.toUpperCase()}{" "}
-          {data.recovered === undefined ? " Not Found!" : ""}
-        </h2>
-      </div>
-      <Card key="card" pd={false} data={data}></Card>
-      <Chart
-        key="chart"
-        name={search.toUpperCase()}
-        data={chartData}
-        vacData={chartDataVac}
-      ></Chart>
-      <div className="container countries-div">
-        <div className="table-rs">
-          <table className="table table-bordered">
-            <thead className="sticky">
-              <TableHeader></TableHeader>
-            </thead>
-            <tbody>
-              {dates.length > 0 &&
-                dates.map((dt) => (
-                  <TableBody
-                    key={dt}
-                    updated={dt}
-                    todayCases={
-                      cases[k] - cases[k + 1] < 0 ? 0 : cases[k] - cases[k + 1]
-                    }
-                    cases={cases[k]}
-                    todayDeaths={
-                      deaths[k] - deaths[k + 1] < 0
-                        ? 0
-                        : deaths[k] - deaths[k + 1]
-                    }
-                    deaths={deaths[k]}
-                    todayRecovered={
-                      recovered[k] - recovered[k + 1] < 0
-                        ? 0
-                        : recovered[k] - recovered[k + 1]
-                    }
-                    recovered={recovered[k++]}
-                  ></TableBody>
-                ))}
-            </tbody>
-          </table>
+      {data.length === 0 ? (
+        <Spinner></Spinner>
+      ) : (
+        <div>
+          <div className="container search-div">
+            <h2 className="text-center heading">
+              {"COUNTRY"}: {search.toUpperCase()}{" "}
+              {data.recovered === undefined ? " Not Found!" : ""}
+            </h2>
+          </div>
+          <Card key="card" pd={false} data={data}></Card>
+          <Chart
+            key="chart"
+            name={search.toUpperCase()}
+            data={chartData}
+            vacData={chartDataVac}
+          ></Chart>
+          <div className="container countries-div">
+            <div className="table-rs">
+              <table className="table table-bordered">
+                <thead className="sticky">
+                  <TableHeader></TableHeader>
+                </thead>
+                {dates.length > 0 &&
+                  dates.map((dt) => (
+                    <TableBody
+                      key={dt}
+                      updated={dt}
+                      todayCases={
+                        cases[k] - cases[k + 1] < 0
+                          ? 0
+                          : cases[k] - cases[k + 1]
+                      }
+                      cases={cases[k]}
+                      todayDeaths={
+                        deaths[k] - deaths[k + 1] < 0
+                          ? 0
+                          : deaths[k] - deaths[k + 1]
+                      }
+                      deaths={deaths[k]}
+                      todayRecovered={
+                        recovered[k] - recovered[k + 1] < 0
+                          ? 0
+                          : recovered[k] - recovered[k + 1]
+                      }
+                      recovered={recovered[k++]}
+                    ></TableBody>
+                  ))}
+              </table>
+            </div>
+          </div>
+          <Footer></Footer>
         </div>
-      </div>
-      <Footer></Footer>
+      )}
     </>
   );
 };

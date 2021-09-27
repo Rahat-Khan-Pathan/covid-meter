@@ -1,6 +1,7 @@
 import React from "react";
 import Zone from "../Zone/Zone";
 import "./Zones.css";
+import Spinner from "../Spinner/Spinner";
 
 const Zones = (props) => {
   const { data } = props;
@@ -45,46 +46,53 @@ const Zones = (props) => {
       checkZone(a.todayCases, a.population)
   );
   return (
+    <>
+      { data.length ===0 ? <Spinner></Spinner> :
         <div className="container zones-container">
         <div className="row row-cols-1 row-cols-lg-2 gy-5">
-            <div className="col mb-5">
+          <div className="col mb-5">
             <h2 className="text-center mb-3 heading">Red Zone Countries</h2>
             <Zone
-                data={sortedRed}
-                check={checkZone}
-                variant="#a23520"
-                color="red"
+              key={1}
+              data={sortedRed}
+              check={checkZone}
+              variant="#a23520"
+              color="red"
             ></Zone>
-            </div>
-            <div className="col mb-5">
+          </div>
+          <div className="col mb-5">
             <h2 className="text-center mb-3 heading">Orange Zone Countries</h2>
             <Zone
-                data={sortedOrange}
-                check={checkZone}
-                variant="#e38d2c"
-                color="orange"
+              key={2}
+              data={sortedOrange}
+              check={checkZone}
+              variant="#e38d2c"
+              color="orange"
             ></Zone>
-            </div>
-            <div className="col">
+          </div>
+          <div className="col">
             <h2 className="text-center mb-3 heading">Yellow Zone Countries</h2>
             <Zone
-                data={sortedYellow}
-                check={checkZone}
-                variant="#efc637"
-                color="yellow"
+              key={3}
+              data={sortedYellow}
+              check={checkZone}
+              variant="#efc637"
+              color="yellow"
             ></Zone>
-            </div>
-            <div className="col">
+          </div>
+          <div className="col">
             <h2 className="text-center mb-3 heading">Green Zone Countries</h2>
             <Zone
-                data={sortedGreen}
-                check={checkZone}
-                variant="#51a09e"
-                color="green"
+              key={4}
+              data={sortedGreen}
+              check={checkZone}
+              variant="#51a09e"
+              color="green"
             ></Zone>
-            </div>
+          </div>
         </div>
-        </div>
+      </div>}
+    </>
   );
 };
 

@@ -19,7 +19,6 @@ const CountryData = (props) => {
                 details={" "}
               ></TableHeader>
             </thead>
-            <tbody>
               {data.length &&
                 data.map((dt) => (
                   <TableBody
@@ -38,7 +37,6 @@ const CountryData = (props) => {
                     testsPerOneMillion={dt.testsPerOneMillion}
                   ></TableBody>
                 ))}
-            </tbody>
           </table>
         </div>
       </div>

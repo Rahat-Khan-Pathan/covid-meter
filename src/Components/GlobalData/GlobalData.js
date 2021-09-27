@@ -79,8 +79,7 @@ const GlobalData = (props) => {
             <thead>
               <TableHeader tests={" "} testsPerOneMillion={" "}></TableHeader>
             </thead>
-            <tbody>
-              <TableBody
+            <TableBody
                 key={"global"}
                 updated={updated}
                 todayCases={todayCases}
@@ -92,7 +91,6 @@ const GlobalData = (props) => {
                 tests={tests || 0}
                 testsPerOneMillion={testsPerOneMillion || 0}
               ></TableBody>
-            </tbody>
           </table>
         </div>
       </div>

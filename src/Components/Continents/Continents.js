@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import TableBody from "../TableBody/TableBody";
 import TableHeader from "../TableHeader/TableHeader";
+import Spinner from "../Spinner/Spinner";
 
 const Continents = (props) => {
   const {data} = props;
@@ -9,7 +10,8 @@ const Continents = (props) => {
   },[])
   return (
     <>
-      <div className="container pb-5 countries-div">
+      { data.length ===0 ? <Spinner></Spinner> :
+        <div className="container pb-5 countries-div">
         <h2 className="text-center mt-4 mb-3 heading">CONTINENTS</h2>
         <div className="table-responsive">
           <table className="table table-bordered">
@@ -20,8 +22,7 @@ const Continents = (props) => {
                 testsPerOneMillion={" "}
               ></TableHeader>
             </thead>
-            <tbody>
-              {data?.length > 0 &&
+            {data?.length > 0 &&
                 data?.map((dt) => (
                   <TableBody
                     key={dt.continent}
@@ -37,10 +38,9 @@ const Continents = (props) => {
                     testsPerOneMillion={dt.testsPerOneMillion}
                   ></TableBody>
                 ))}
-            </tbody>
           </table>
         </div>
-      </div>
+      </div>}
     </>
   );
 };

@@ -16,7 +16,7 @@ const Zone = (props) => {
     <div className="overflow">
       {data &&
         data?.map((dt) => (
-          <div className="pe-4">
+          <div className="pe-4" key={dt.country}>
             <div className="row mb-4">
               <div className="col-2 d-flex align-items-center justify-content-center">
                 <img className="flag-img" src={dt.countryInfo.flag} alt="" />
