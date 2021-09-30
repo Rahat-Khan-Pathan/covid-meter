@@ -49,29 +49,29 @@ function App() {
       <Router>
         <Navbar></Navbar>
         <Switch>
+          <Route path="/home">
+            <Home globalData={globalData} countryData={countryData}></Home>
+          </Route>
+          <Route path="/countries/">
+            <Home globalData={globalData} countryData={countryData}></Home>
+          </Route>
+          <Route path="/states">
+            <States data={statesData}></States>
+          </Route>
+          <Route path="/continents">
+            <Continents data={continentsData}></Continents>
+          </Route>
+          <Route path="/zones">
+            <Zones data={countryData}></Zones>
+          </Route>
+          <Route path="/search/:query/:search">
+            <Search></Search>
+          </Route>
           <Route exact path="/">
-            <Home key="1" globalData={globalData} countryData={countryData}></Home>
-          </Route>
-          <Route exact path="/home">
-            <Home key="1" globalData={globalData} countryData={countryData}></Home>
-          </Route>
-          <Route exact path="/countries/">
-            <Home key="1" globalData={globalData} countryData={countryData}></Home>
-          </Route>
-          <Route exact path="/states">
-            <States key="2" data={statesData}></States>
-          </Route>
-          <Route exact path="/continents">
-            <Continents key="3" data={continentsData}></Continents>
-          </Route>
-          <Route exact path="/zones">
-            <Zones key="6" data={countryData}></Zones>
-          </Route>
-          <Route exact path="/search/:query/:search">
-            <Search key="4"></Search>
+            <Home globalData={globalData} countryData={countryData}></Home>
           </Route>
           <Route path="*">
-            <NotFound key="5"></NotFound>
+            <NotFound></NotFound>
           </Route>
         </Switch>
       </Router>

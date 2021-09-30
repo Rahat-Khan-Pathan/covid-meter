@@ -54,7 +54,7 @@ const Navbar = () => {
               onInput={(e) => setInput(e.target.value)}
               id="input"
             />
-            <Link to={"/search/countries/" + input}>
+            <Link to={`/search/countries/${input}`}>
               <button
                 onClick={() => (document.getElementById("input").value = "")}
                 className="btn btn-outline-light"

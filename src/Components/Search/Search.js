@@ -15,7 +15,7 @@ const Search = () => {
     timeline: { cases: [0], deaths: [0], recovered: [0] },
   });
   const [vacData, setVacData] = useState({ timeline: [{ daily: 0 }] });
-  const url = "https://corona.lmao.ninja/v3/covid-19/" + query + "/" + search;
+  const url = `https://corona.lmao.ninja/v3/covid-19/${query}/${search}`;
   const myUrl = `https://corona.lmao.ninja/v3/covid-19/historical/${search}?lastdays=all`;
   const vacUrl = `https://corona.lmao.ninja/v3/covid-19/vaccine/coverage/countries/${search}?lastdays=all&fullData=true`;
   useEffect(() => {
