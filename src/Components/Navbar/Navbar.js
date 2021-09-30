@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import './NavBar.css';
 
 const Navbar = () => {
   const [input, setInput] = useState("");
@@ -18,29 +19,29 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse text-center" id="navbarTogglerDemo01">
-          <Link className="navbar-brand" to="/home">
+          <NavLink className="navbar-brand" to="/home">
             COVID METER
-          </Link>
+          </NavLink>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link className="nav-link text-center" aria-current="page" to="/home">
+              <NavLink className="nav-link text-center" activeClassName="selected" aria-current="page" to="/home">
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-center" aria-current="page" to="/states">
+              <NavLink className="nav-link text-center" activeClassName="selected" aria-current="page" to="/states">
                 USA States
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-center" aria-current="page" to="/continents">
+              <NavLink className="nav-link text-center" activeClassName="selected" aria-current="page" to="/continents">
                 Continents
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-center" aria-current="page" to="/zones">
+              <NavLink className="nav-link text-center" activeClassName="selected" aria-current="page" to="/zones">
                 Zones
-              </Link>
+              </NavLink>
             </li>
           </ul>
           <form className="d-flex">
