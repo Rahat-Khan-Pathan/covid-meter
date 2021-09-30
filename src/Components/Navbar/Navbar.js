@@ -18,29 +18,29 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse text-center" id="navbarTogglerDemo01">
-          <a className="navbar-brand" href="/home">
+          <Link className="navbar-brand" to="/home">
             COVID METER
-          </a>
+          </Link>
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link text-center" aria-current="page" href="/home">
+              <Link className="nav-link text-center" aria-current="page" to="/home">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-center" aria-current="page" href="/states">
+              <Link className="nav-link text-center" aria-current="page" to="/states">
                 USA States
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-center" aria-current="page" href="/continents">
+              <Link className="nav-link text-center" aria-current="page" to="/continents">
                 Continents
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-center" aria-current="page" href="/zones">
+              <Link className="nav-link text-center" aria-current="page" to="/zones">
                 Zones
-              </a>
+              </Link>
             </li>
           </ul>
           <form className="d-flex">
